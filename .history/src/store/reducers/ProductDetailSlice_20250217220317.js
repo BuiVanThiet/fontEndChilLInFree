@@ -1,0 +1,29 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+    productDetails: [],
+    loadingProductDetail: false,
+    errorProductDetail: null,
+    priceSeling: 
+};
+
+const ProductDetailSlice = createSlice({
+    name: 'productDetail',
+    initialState,
+    reducers: {
+        setProductDetails: (state, action) => {
+            state.productDetails = action.payload;
+        },
+        setLoading: (state, action) => {
+            state.loadingProductDetail = action.payload;
+        },
+        setError: (state, action) => {
+            state.errorProductDetail = action.payload;
+        },
+        setPriceSeling
+    },
+});
+
+export const { setProductDetails, setLoading, setError } = ProductDetailSlice.actions;
+
+export default ProductDetailSlice.reducer;

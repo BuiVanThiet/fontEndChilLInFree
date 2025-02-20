@@ -1,0 +1,249 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.loading-image {
+  width: 100px;
+  animation: blink 1s infinite ease-in-out; /* 👀 Hiệu ứng ẩn hiện */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 9999;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Màu nền tối với độ mờ */
+  opacity: 0; /* Ẩn lớp phủ khi không hiển thị */
+  visibility: hidden; /* Không chiếm diện tích khi ẩn */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+  z-index: 9999; /* Đảm bảo lớp phủ nằm trên tất cả các phần tử khác */
+}
+
+.overlay.show {
+  opacity: 1; /* Hiển thị lớp phủ */
+  visibility: visible; /* Làm lớp phủ hiển thị */
+}
+
+.progress {
+  margin-top: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.bvt-shop-menu-expended{
+  @apply absolute
+  top-10
+  z-50
+  w-full
+  bg-white
+  text-center
+  mt-2	
+  animate-slideDown;
+}
+
+.top-menu-item-custom {
+  @apply cursor-pointer 
+  py-1
+  hover:text-gray-950 
+  relative 
+  after:lg:absolute 
+  after:lg:bottom-0 
+  after:lg:left-0 
+  after:lg:bg-slate-900 
+  after:lg:h-0.5 
+  after:lg:w-0 
+  hover:lg:after:w-full
+  after:lg:transition-all
+  after:lg:ease-in-out 
+  after:lg:duration-300;
+}
+
+.top-menu-item-custom-icon {
+  @apply cursor-pointer 
+  py-1
+  hover:text-gray-950 
+  relative 
+  after:lg:absolute 
+  after:lg:bottom-0 
+  after:lg:left-0 
+  after:lg:bg-red-600
+  after:lg:h-0.5 
+  after:lg:w-0 
+  hover:lg:after:w-full
+  after:lg:transition-all
+  after:lg:ease-in-out 
+  after:lg:duration-300;
+}
+
+.top-menu-item-custom-active {
+  @apply 
+      text-black
+  ;
+}
+
+.icon-card-custom {
+  @apply w-5
+  h-5
+  inline-block;
+}
+
+.badge-circle-custom{
+  @apply text-xs 
+  text-center 
+  rounded-full 
+  px-1.5;
+}
+
+
+
+.bvt-subheadline-custome {
+  @apply flex justify-center items-center mb-24 mt-24;
+}
+
+.bvt-subheadline-deco-line {
+  @apply w-8 h-px bg-red-600;
+}
+
+.bvt-subheadline-label {
+  @apply uppercase mx-4 tracking-widest text-red-600 font-medium text-[20px] text-center;
+}
+/*anh san pham chi tiet phan slide anh*/
+.product__slider-wrap {
+  max-width: 100%;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.product__slider {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.product__image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+  margin: 0.25rem;
+  border: 1px solid red;
+}
+
+.product__image:first-child {
+  margin-left: 0;
+}
+
+.product__image:last-child {
+  margin-right: 0;
+}
+
+.product__image:hover {
+  opacity: 1;
+}
+
+.product__image--active {
+  border: 2px solid black;
+  opacity: 1;
+}
+
+.product__slider::-webkit-scrollbar {
+  height: 5px;
+}
+
+.product__slider::-webkit-scrollbar-thumb {
+  background-color: #f9564f;
+  border-radius: 50px;
+}
+/*cai nay la slide album*/
+.carousel {
+  margin: 10 auto;
+  padding: 10px 0;
+  max-width: 500px;
+  max-height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;  /* Xếp các phần tử theo chiều dọc */
+  gap: 10px;  /* Khoảng cách giữa các phần tử */
+  &:hover .group {
+      animation-play-state: paused;
+  }
+}
+
+.card {
+  height: 400px;  /* Chiều cao cố định cho card */
+  color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0;
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;  /* Ảnh phủ toàn bộ */
+  background-position: center;  /* Căn giữa ảnh */
+  border: 2px solid red;  /* Thêm border màu đỏ */
+
+}
+
+.group {
+  display: flex;
+  flex-direction: column;  /* Xếp theo chiều dọc */
+  gap: 10px;  /* Khoảng cách giữa các card */
+  will-change: transform;  /* Cải thiện hiệu suất animation */
+}
+
+.group-1 {
+                    
+  animation: scrolling1 30s linear infinite;  /* Hiệu ứng chạy slide */
+}
+.group-2 {
+
+  animation: scrolling2 30s linear infinite;  /* Hiệu ứng chạy slide */
+}
+
+@keyframes scrolling1 {
+  100% {
+      transform: translateY(0);  /* Dịch chuyển theo chiều dọc */
+  }
+  0% {
+      transform: translateY(-100%);  /* Dịch chuyển hết chiều dọc */
+  }
+}
+@keyframes scrolling2 {
+  0% {
+      transform: translateY(0);  /* Dịch chuyển theo chiều dọc */
+  }
+  100% {
+      transform: translateY(-100%);  /* Dịch chuyển hết chiều dọc */
+  }
+}
