@@ -16,7 +16,7 @@ import PageExchangeReturnProduct from "./PageExchangeReturnProduct";
 import PageProductDetail from "./products/PageProductDetail";
 import ScrollToTop from "../../store/action/ScrollToTop";
 import PageOrder from "./cardProducts/PageOrder";
-import PageProfile from "./profiles/PageProfile";
+import PageProfile from "./";
 import MainManage from "../manage-shop/MainManage";
 import LoginForm from "../../JWT/LoginForm";
 import Loading from '../Loading';
