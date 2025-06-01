@@ -11,7 +11,6 @@ class WebSocketService {
     connect(callback) {
         console.log("🔄 Đang kết nối WebSocket...");
         // const socket = new SockJS('http://localhost:8080/ws');
-        const socket = new SockJS('https://kit-vital-parakeet.ngrok-free.app/ws');
         this.client = new Client({
             webSocketFactory: () => socket,
             onConnect: () => {
